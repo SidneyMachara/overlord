@@ -1,0 +1,66 @@
+.link-box{
+  float:left;
+  background-color: maroon;
+  width:250px;
+
+  color: #fff;
+  border: 1px solid black;
+  padding: 0px 10px 5px 10px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  -webkit-box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
+  -moz-box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
+  box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
+}
+
+.link-box:hover{
+  background-color: #bf2a61;
+}
+
+.link-box-link{
+  background-color: lightgray;
+  color: black;
+}
+
+.footer{
+  background-color: black;
+  margin-top: 260px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #fff;
+}
+
+.link-title-text{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3px;
+}
+
+.deleteME{
+  background-color: red;
+  color:black;
+  margin: 0;
+
+  position: relative;
+  top:20px;
+  left:200px;
+
+}
+
+.title{
+  background-color: #eee;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.link-form{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
