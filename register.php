@@ -1,5 +1,47 @@
 
+<?php
+include 'includes/db_connect.php';
 
+
+if(isset($_POST['register'])){
+  include 'includes/db_connect.php';
+
+  $email = $_POST['email'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $confirmPassword = $_POST['ConfirmPassword'];
+
+
+
+          $existenceCheck = "SELECT * FROM users WHERE email = '$email'";
+         $existenceCheck2 = mysqli_query($conn,$existenceCheck);
+
+         //if passwords match
+         if($_POST['password'] != $confirmPassword){
+            echo "pleaseenter macthing password ";
+         }
+         elseif($existenceCheck2->num_rows > 0){
+            echo " user exists";
+         }
+         else{
+
+
+         $entry = "INSERT INTO users (email,username,password)
+                 VALUES ('$email','$username','$password')";
+         mysqli_query($conn,$entry);
+         header('location:login.php');
+
+         }
+
+
+
+
+
+}
+
+
+
+ ?>
 
             <div class="title">
               <center>  <h3 > Never Remember Again</h3>
@@ -21,7 +63,7 @@
                 </div>
                 <div class="modal-body">
 
-                  <form class="link-form" action="index.php" method="POST">
+                  <form class="link-form" action="register.php" method="POST">
 
                       <label>Email:<br>
                         <input type="email" name="email" value="" placeholder="Email"required class="add-link-form-content">
@@ -34,14 +76,14 @@
 
 
                       <label>Password:<br>
-                      <input type="passwrod" name="password" value="" placeholder="password " required class="add-link-form-content"><br>
+                      <input type="password" name="password" value="" placeholder="password " required class="add-link-form-content"><br>
                       </label>
 
                       <label>Confirm Password:<br>
                       <input type="Password" name="ConfirmPassword" value="" placeholder="Confirm Password " required class="add-link-form-content"><br>
                       </label>
 
-                      <input type="submit" class="btn btn-primary" name="submit" value="submit">
+                      <input type="submit" class="btn btn-primary" name="register" value="Register">
 
                   </form>
 
