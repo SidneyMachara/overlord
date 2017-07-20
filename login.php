@@ -17,10 +17,10 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
  }else{
    $user = mysqli_fetch_row($query);
 
-   if( $pass == $user[3]){
+   if( $pass == $user[2]){
       session_start();
-        $_SESSION['email'] = $user[1];
-        $_SESSION['username'] = $user[2];
+        $_SESSION['email'] = $user[0];
+        $_SESSION['username'] = $user[1];
         $_SESSION['logged_in'] = True;
 
         header('location:index.php');
@@ -50,6 +50,8 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
   <body class="my-login-body" >
 
 <div class="container ">
+
+<?php include 'register.php'; ?>
 
   <center><h1 id="login-title-overlord">OverLord</h1></center>
 

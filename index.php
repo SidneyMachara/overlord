@@ -9,8 +9,12 @@ include 'includes/db_connect.php';
 // code for searching
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   $output="";
+  $email = $_SESSION['email'];
   //before search display everything
- $sql1 = "SELECT * FROM overlordtable";
+  $sql1 = "SELECT overlordtable.*
+          FROM overlordtable
+          inner JOIN users on overlordtable.email = users.email
+          where overlordtable.email = '$email'";
 $result1 = mysqli_query($conn,$sql1);
  $output = $result1;
  function showLinks($k){  //gets required images and prints to screen
@@ -43,9 +47,10 @@ if(isset($_POST['submit'])){
   $linkTitle = $_POST['linkTitle'];
   $link = $_POST['link'];
   $description = $_POST['description'];
+  $email = $_SESSION['email'];
 
-  $entry = "INSERT INTO overlordtable (sitename,sitelink,sitedescription)
-          VALUES ('$linkTitle','$link','$description')";
+  $entry = "INSERT INTO overlordtable (sitename,sitelink,sitedescription,email)
+          VALUES ('$linkTitle','$link','$description','$email')";
 
  mysqli_query($conn,$entry);
   // mysqli_query($conn,$existenceCheck2);
@@ -104,6 +109,8 @@ include 'search.php';
     </nav>
 
 
+
+
 <div class="row">
 
     <div class="col-md-9 col-sm-7 col-xs-3">
@@ -117,7 +124,7 @@ include 'search.php';
     <div class="col-md-3 col-sm-5 col-xs-8">
         <!-- search bar -->
         <form class="" action="index.php" method="post">
-            <input type="text" name="searchBox" value="" class="mysearchBox" required placeholder="Search..">
+            <input type="text" name="searchBox" value="" class="mysearchBox"  placeholder="Search..">
             <button class="btn btn-default" type="submit" name="search"><i class="glyphicon glyphicon-search"></i></button>
         </form>
     </div>
@@ -175,7 +182,7 @@ include 'search.php';
         </div>
 
       </div>
-    </div>
+
 
 <!-- end of form modal -->
 
