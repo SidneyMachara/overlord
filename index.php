@@ -71,45 +71,11 @@ include 'search.php';
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- jQuery library -->
 
-      <link rel="stylesheet"  href="css/myStyle.css">
-  </head>
+    <?php include 'includes/head.php'; ?>
   <body>
-    <nav class="navbar navbar-default myNavbar">
-      <div class="container-fluid">
-        <!-- logo -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar" name="button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
 
-
-          <a href="#" class="navbar-brand">Over-Lord</a>
-        </div>
-        <!-- menu items -->
-        <div class="collapse navbar-collapse" id="mainNavBar">
-          <ul class="nav navbar-nav ">
-            <li class="active"><a href="#">home</a></li>
-            <li ><a href="#">gallery</a></li>
-            <li ><a href="#footer">contact</a></li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </nav>
-
-
+      <?php include 'includes/navbar.php'; ?>
 
 
 <div class="row">
@@ -201,9 +167,9 @@ include 'search.php';
 
     </div>
 
-    <footer class="footer">
-      <center>copy&copy right sidney</center>
-    </footer>
+
+    <?php include 'includes/footer.php'; ?>
+
 
   </body>
 </html>
