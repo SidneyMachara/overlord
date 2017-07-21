@@ -1,15 +1,14 @@
-
 <?php
 include 'includes/db_connect.php';
-
+if($_SERVER['REQUEST_METHOD'] =='POST'){
 
 if(isset($_POST['register'])){
-  include 'includes/db_connect.php';
+
 
   $email = $_POST['email'];
   $username = $_POST['username'];
-  $password = $_POST['password'];
-  $confirmPassword = $_POST['ConfirmPassword'];
+  $password = md5($_POST['password']);
+  $confirmPassword = md5($_POST['ConfirmPassword']);
 
 
 
@@ -17,8 +16,8 @@ if(isset($_POST['register'])){
          $existenceCheck2 = mysqli_query($conn,$existenceCheck);
 
          //if passwords match
-         if($_POST['password'] != $confirmPassword){
-            echo "pleaseenter macthing password ";
+         if($password != $confirmPassword){
+           echo "pleaseenter macthing password ";
          }
          elseif($existenceCheck2->num_rows > 0){
             echo " user exists";
@@ -37,6 +36,7 @@ if(isset($_POST['register'])){
 
 
 
+}
 }
 
 

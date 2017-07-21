@@ -1,11 +1,15 @@
 <?php
+session_start();
 include 'includes/db_connect.php';
+
 
 // gets in here if the user submits form
 if($_SERVER['REQUEST_METHOD'] =='POST'){
 
+  if(isset($_POST['login'])){
+
   $username = $_POST['username'];
-  $pass = $_POST['pass'];
+  $pass = md5($_POST['pass']);
 
 
  $sql= "SELECT * FROM users WHERE email = '$username' OR username = '$username'";
@@ -18,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
    $user = mysqli_fetch_row($query);
 
    if( $pass == $user[2]){
-      session_start();
+
         $_SESSION['email'] = $user[0];
         $_SESSION['username'] = $user[1];
         $_SESSION['logged_in'] = True;
@@ -29,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
      echo 'wrong pass';
    }
 
+ }
  }
  }
 
@@ -51,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
 
 <div class="container ">
 
-<?php include 'register.php'; ?>
+ <?php include 'register.php'; ?>
 
   <center><h1 id="login-title-overlord">OverLord</h1></center>
 
