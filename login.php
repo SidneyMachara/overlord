@@ -2,6 +2,9 @@
 session_start();
 include 'includes/db_connect.php';
 
+$_SESSION['email'] = "";
+$_SESSION['username'] = "";
+$_SESSION['logged_in'] = false;
 
 // gets in here if the user submits form
 if($_SERVER['REQUEST_METHOD'] =='POST'){
