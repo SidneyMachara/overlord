@@ -16,6 +16,10 @@
   box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
 }
 
+.myNavbar{
+  background-color: #eee;
+}
+
 .mysearchBox{
   padding-left: 4px;
 }
@@ -109,7 +113,7 @@ padding-left: 4px;
  margin-left: 8%;
  height: 40px;
  border: 2px sold black;
- color: black;
+ color: #fff;
  border-radius: 6.5%;
 margin-bottom: 25px;
 padding-left: 4px;

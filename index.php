@@ -82,7 +82,7 @@ include 'search.php';
       <link rel="stylesheet"  href="css/myStyle.css">
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default myNavbar">
       <div class="container-fluid">
         <!-- logo -->
         <div class="navbar-header">
@@ -97,7 +97,7 @@ include 'search.php';
         </div>
         <!-- menu items -->
         <div class="collapse navbar-collapse" id="mainNavBar">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav ">
             <li class="active"><a href="#">home</a></li>
             <li ><a href="#">gallery</a></li>
             <li ><a href="#footer">contact</a></li>
@@ -120,6 +120,8 @@ include 'search.php';
           Log Out
         </button>
         </a>
+        <?php echo $_SESSION['username']; ?>
+
     </div>
 
     <div class="col-md-3 col-sm-5 col-xs-8">
