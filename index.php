@@ -14,10 +14,11 @@ include 'includes/db_connect.php';
   $output="";
   $email = $_SESSION['email'];
   //before search display everything
-  $sql1 = "SELECT overlordtable.*
+  $sql1 = "SELECT *
           FROM overlordtable
-          inner JOIN users on overlordtable.email = users.email
-          where overlordtable.email = '$email'";
+          where email = '$email'";
+
+
 $result1 = mysqli_query($conn,$sql1);
  $output = $result1;
  function showLinks($k){  //gets required images and prints to screen

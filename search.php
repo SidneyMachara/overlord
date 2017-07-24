@@ -23,10 +23,9 @@ if(isset($_POST['search'])){
 
   if($result1->num_rows== 0){
     //if it does not find record bring back everythin
-    $sql1 = "SELECT overlordtable.*
+    $sql1 = "SELECT *
             FROM overlordtable
-            inner JOIN users on overlordtable.email = users.email
-            where overlordtable.email = '$email'";
+            where email = '$email'";
     $result1 = mysqli_query($conn,$sql1);
     $output= $result1;
   }else{
@@ -37,10 +36,9 @@ if(isset($_POST['search'])){
 else {
   {
     //before search display everything
-    $sql1 = "SELECT overlordtable.*
+    $sql1 = "SELECT *
             FROM overlordtable
-            inner JOIN users on overlordtable.email = users.email
-            where overlordtable.email = '$email'";
+            where email = '$email'";
   $result1 = mysqli_query($conn,$sql1);
    $output = $result1;
   }
