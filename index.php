@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-if( $_SESSION['logged_in'] == false){
+
+
+if( empty($_SESSION['username'])){
   header('location:login.php');
 }
 

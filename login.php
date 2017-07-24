@@ -4,7 +4,7 @@ include 'includes/db_connect.php';
 
 $_SESSION['email'] = "";
 $_SESSION['username'] = "";
-$_SESSION['logged_in'] = false;
+$_SESSION['logged_in'] = "";
 
 // gets in here if the user submits form
 if($_SERVER['REQUEST_METHOD'] =='POST'){
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
 <html>
   <head>
   <?php include 'includes/head.php'; ?>
-  
+
   <body class="my-login-body" >
 
 <div class="container ">
@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST'){
       <center><h3>LOGIN</h3></center>
     </div>
 
-      <input type="text" name="username" required placeholder="Username or Email" class="form-content">
+      <input type="text" name="username" required placeholder="Username or Email" class="form-content" autofocus>
 
 
       <input type="password" name="pass" required placeholder="Password" class="form-content">
