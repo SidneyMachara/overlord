@@ -31,7 +31,7 @@ $result1 = mysqli_query($conn,$sql1);
          <form class="" action="delete.php?deleteME='<?php echo $row['id'];?>' " method="post">
            <input type="submit" name="delete" value="X" class="deleteME">
          </form>
-         <h3 class="link-title-text"><?php echo $row['sitename'];  ?></h3>
+         <h3 class="link-title-text font-cusiveAlex" ><?php echo $row['sitename'];  ?></h3>
 
        </div>
      </a>
@@ -57,6 +57,7 @@ if(isset($_POST['submit'])){
           VALUES ('$linkTitle','$link','$description','$email')";
 
  mysqli_query($conn,$entry);
+ header('location:index.php');
   // mysqli_query($conn,$existenceCheck2);
 
 }
@@ -104,8 +105,8 @@ include 'search.php';
 </div>
 
 
-      <div class="title">
-        <center>  <h3 > Never Remember Again</h3>
+      <div class="title head-font-cusiveAlex">
+        <center>  <h2 > Never Remember Again</h2>
         <!-- for the form modal -->
         <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
           add Link
