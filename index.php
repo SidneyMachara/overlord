@@ -25,7 +25,7 @@ $result1 = mysqli_query($conn,$sql1);
    while($row = mysqli_fetch_assoc($k)) {
      ?>
 
-     <a href="<?php echo $row['sitelink']; ?>">
+     <a href="<?php echo $row['sitelink']; ?> " target='_blank'>
        <div class="link-box">
          <!-- delete button -->
          <form class="" action="delete.php?deleteME='<?php echo $row['id'];?>' " method="post">
@@ -167,6 +167,11 @@ include 'search.php';
           showLinks($output);
        ?>
 
+
+    </div>
+
+    <div>
+        <a href="#"  class="backToTop" ><center>&#8686; </center></a>
 
     </div>
 
