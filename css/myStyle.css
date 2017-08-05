@@ -28,6 +28,7 @@
 
 .link-box:hover{
   background-color: #bf2a61;
+  
 }
 
 .link-box-link{
@@ -155,6 +156,37 @@ padding-left: 4px;
 .my-login-body{
   background-color: #C9BEBE;
 }
+
+.cover{
+  width: 100vw;
+  position: fixed;
+  min-height: 100%;
+  background-color: black;
+  display: none;
+  z-index: 1200;
+  top:0vh;
+}
+
+#coverlink:hover , #uncoverlink:hover{
+  cursor: pointer;
+}
+
+
+
+#uncoverlink{
+
+  border: 2px solid green;
+  border-radius: 50%;
+  position: absolute;
+  top: 80vh;
+  left: 50vw;
+
+  height: 60px;
+  width: 60px;
+  background-color: green;
+  color: #fff;
+}
+
 
 /*end for login page*/
 

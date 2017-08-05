@@ -17,6 +17,7 @@
         <li class="active"><a href="#">home</a></li>
         <li ><a href="#">gallery</a></li>
         <li ><a href="#footer">contact</a></li>
+        <li><a  id="coverlink">Cover</a></li>
       </ul>
 
     </div>
@@ -24,3 +25,22 @@
   </div>
 
 </nav>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+       $("#coverlink").click(function() {
+       $(".cover").show(1000)
+       });
+
+       $("#uncoverlink").click(function() {
+       $(".cover").hide(1000)
+       });
+     });
+ </script>
+
+
+<div class="cover">
+
+  <a   id="uncoverlink" ><center>&#8686; </center></a>
+</div>
