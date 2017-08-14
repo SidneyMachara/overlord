@@ -1,3 +1,4 @@
+/*for the home page*/
 .link-box{
   float:left;
   background-color: maroon;
@@ -13,6 +14,10 @@
   -webkit-box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
   -moz-box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
   box-shadow: 16px 27px 24px 0px rgba(0,0,0,0.53);
+}
+
+.mysearchBox{
+  padding-left: 4px;
 }
 
 .link-box:hover{
@@ -63,4 +68,73 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.add-link-form-content{
+
+ width:20vw;
+ height: 40px;
+ border: 2px sold black;
+ color: black;
+margin-bottom: 5px;
+padding-left: 4px;
+
+
+}
+.modal-header, .btn-close{
+  background-color: maroon;
+  color: #fff;
+}
+/*end home page*/
+
+/*for login page*/
+
+#login-title-overlord{
+  margin-top: 15%;
+}
+.login-form{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  margin-top: 3%;
+
+  padding: 10px 10px 30px 10px ;
+
+}
+
+.form-content{
+  background-color: #353030;
+ width:18vw;
+ margin-left: 8%;
+ height: 40px;
+ border: 2px sold black;
+ color: black;
+ border-radius: 6.5%;
+margin-bottom: 25px;
+padding-left: 4px;
+
+}
+
+.login-title{
+  background-color: maroon;
+  color: #fff;
+  padding-top:0.5px;
+  padding-bottom: 1px;
+  margin-bottom:30px;
+}
+
+.my-login-body{
+  background-color: #C9BEBE;
+}
+
+/*end for login page*/
+
+
+
+@media screen and (max-width:480px;){
+
+  .add-link-form-content{
+   width:100px;
+  }
 }
