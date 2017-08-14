@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include 'includes/db_connect.php';
 $deleteME = $_GET['deleteME'];
 
 if($_SERVER['REQUEST_METHOD'] =='POST'){

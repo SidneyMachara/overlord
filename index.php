@@ -4,7 +4,35 @@ if( $_SESSION['logged_in'] == False){
   header('location:login.php');
 }
 
-include 'db_connect.php';
+include 'includes/db_connect.php';
+
+// code for searching
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  $output="";
+  //before search display everything
+ $sql1 = "SELECT * FROM overlordtable";
+$result1 = mysqli_query($conn,$sql1);
+ $output = $result1;
+ function showLinks($k){  //gets required images and prints to screen
+   while($row = mysqli_fetch_assoc($k)) {
+     ?>
+
+     <a href="<?php echo $row['sitelink']; ?>">
+       <div class="link-box">
+         <!-- delete button -->
+         <form class="" action="delete.php?deleteME='<?php echo $row['id'];?>' " method="post">
+           <input type="submit" name="delete" value="X" class="deleteME">
+         </form>
+         <h3 class="link-title-text"><?php echo $row['sitename'];  ?></h3>
+
+       </div>
+     </a>
+
+     <?php
+   }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -23,6 +51,10 @@ if(isset($_POST['submit'])){
   // mysqli_query($conn,$existenceCheck2);
 
 }
+
+include 'search.php';
+
+
 }
 
 
@@ -85,8 +117,8 @@ if(isset($_POST['submit'])){
     <div class="col-md-3 col-sm-5 col-xs-8">
         <!-- search bar -->
         <form class="" action="index.php" method="post">
-            <input type="text" name="searchBox" value="" class="mysearchBox" required placeholder="Search">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            <input type="text" name="searchBox" value="" class="mysearchBox" required placeholder="Search..">
+            <button class="btn btn-default" type="submit" name="search"><i class="glyphicon glyphicon-search"></i></button>
         </form>
     </div>
 
@@ -153,25 +185,7 @@ if(isset($_POST['submit'])){
 
 
       <?php
-      $sql = "SELECT * FROM overlordtable";
-      $result = mysqli_query($conn, $sql);
-          // output data of each row
-          while($row = mysqli_fetch_assoc($result)) {
-            ?>
-
-            <a href="<?php echo $row['sitelink']; ?>">
-              <div class="link-box">
-                <!-- delete button -->
-                <form class="" action="delete.php?deleteME='<?php echo $row['id'];?>' " method="post">
-                  <input type="submit" name="delete" value="X" class="deleteME">
-                </form>
-                <h3 class="link-title-text"><?php echo $row['sitename'];  ?></h3>
-
-              </div>
-            </a>
-
-            <?php
-          }
+          showLinks($output);
        ?>
 
 
